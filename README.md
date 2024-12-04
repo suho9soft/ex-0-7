@@ -6,5 +6,5 @@ ESP 32 Wrover Module
 
 ![My Image](https://github.com/suho9soft/ex-0-7/blob/main/71D4E5DS-qL._SL1500_.jpg)
 
-![Cute Cat](https://github.com/username/repository/raw/main/images/cute_cat.png)
+![Cute Cat](https://github.com/suho9soft/ex-0-7/blob/main/71d6%2BP4PUzL._SL1067_.jpg)
 

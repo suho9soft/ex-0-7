@@ -1,0 +1,115 @@
+import tkinter as tk
+from tkinter import font
+import paho.mqtt.client as mqtt
+import threading
+
+# MQTT 브로커 정보
+MQTT_BROKER = "broker.emqx.io"
+MQTT_PORT = 1883
+MQTT_TOPICS = [
+    "arduino/led1",
+    "arduino/led2",
+    "arduino/led3",
+    "arduino/led4",
+    "arduino/led5",
+    "arduino/led6",
+    "arduino/led7",
+    "arduino/led8",
+]
+
+# MQTT 클라이언트 초기화
+client = mqtt.Client()
+
+def connect_mqtt():
+    try:
+        client.connect(MQTT_BROKER, MQTT_PORT, 60)
+        print("Connected to MQTT Broker!")
+        client.loop_start()  # 백그라운드에서 MQTT 루프 실행
+    except Exception as e:
+        print(f"Failed to connect to MQTT Broker: {e}")
+
+# LED 제어 함수
+def toggle_led(topic, state):
+    payload = "1" if state else "0"
+    client.publish(topic, payload)
+    print(f"Published to {topic}: {payload}")
+
+# GUI 생성
+def create_gui():
+    window = tk.Tk()
+    window.title("Zerg Hive Control")
+    window.geometry("500x700")
+    window.configure(bg="#2B1B20")  # 저그의 다크 테마 색상
+
+    # 저그 스타일 폰트
+    zerg_font = font.Font(family="Courier New", size=12, weight="bold")
+    zerg_title_font = font.Font(family="Courier New", size=18, weight="bold")
+
+    # 제목
+    title = tk.Label(
+        window,
+        text="🌀 ZERG HIVE CONTROL 🌀",
+        font=zerg_title_font,
+        bg="#2B1B20",
+        fg="#D16D6D"
+    )
+    title.pack(pady=20)
+
+    # 버튼과 라벨 추가
+    labels = [
+        "Hatchery 1", "Hatchery 2", "Spawning Pool", "Hydralisk Den",
+        "Evolution Chamber", "Lair", "Hive", "Nydus Canal"
+    ]
+    buttons = []
+
+    # 버튼 및 레이블 배치
+    for i, label in enumerate(labels):
+        led_state = tk.BooleanVar(value=False)
+
+        # 버튼 동작 정의
+        def toggle(index=i):
+            current_state = led_state.get()
+            toggle_led(MQTT_TOPICS[index], not current_state)
+            led_state.set(not current_state)
+            buttons[index].configure(
+                bg="#4C1E2D" if led_state.get() else "#7F1734", 
+                fg="#F6E6E6"
+            )
+
+        # 레이블
+        lbl = tk.Label(
+            window,
+            text=f"{label} (LED {i+1})",
+            font=zerg_font,
+            bg="#2B1B20",
+            fg="#D3D3D3"
+        )
+        lbl.pack(pady=5)
+
+        # 버튼
+        btn = tk.Button(
+            window,
+            text=f"Toggle LED {i+1}",
+            font=zerg_font,
+            width=20,
+            height=2,
+            bg="#7F1734",
+            fg="#F6E6E6",
+            activebackground="#4C1E2D",
+            activeforeground="#F8D8D8",
+            command=toggle,
+            relief="raised",
+            bd=6,
+        )
+        btn.pack(pady=5)
+        buttons.append(btn)
+
+    # 메인 루프 실행
+    window.mainloop()
+
+# 메인 함수
+if __name__ == "__main__":
+    connect_mqtt()
+    # GUI를 별도의 스레드에서 실행
+    gui_thread = threading.Thread(target=create_gui)
+    gui_thread.start()

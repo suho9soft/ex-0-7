@@ -1,8 +1,7 @@
 # ex-0-7
+2004기
 
 ESP32 Wrover Module
-
-2004기
 
 ![이미지 설명](https://github.com/suho9soft/ex-0-7/blob/main/61xa3vc2TYL._SL1010_.jpg)
 

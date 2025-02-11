@@ -17,5 +17,7 @@ ESP-32-C6-DEV-KIT-N8-M
 
 아두이노 세팅 할때 
 
+![My Image](https://github.com/suho9soft/ex-0-7/blob/main/71D4E5DS-qL._SL1500_.jpg)
+
 
 

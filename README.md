@@ -11,3 +11,9 @@ ESP32 Wrover Module
 
 ESP2 Wrover Module Arduino 세팅  
 
+ESP-32-C6-DEV-KIT-N8-M
+
+아두이노 세팅 할때 
+
+
+

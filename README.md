@@ -13,7 +13,7 @@ ESP2 Wrover Module Arduino 세팅
 
 ESP-32-C6-DEV-KIT-N8-M
 
-![이미지 설명](https://github.com/suho9soft/ex-0-7/blob/main/61xa3vc2TYL._SL1010_.jpg)
+![이미지 설명](https://github.com/suho9soft/ex-0-7/blob/main/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202025-02-11%20235812.png)
 
 아두이노 세팅 할때 
 

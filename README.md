@@ -19,5 +19,12 @@ ESP-32-C6-DEV-KIT-N8-M
 
 ![My Image](https://github.com/suho9soft/ex-0-7/blob/main/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202025-02-11%20235553.png)
 
+waveshare Raspberry-Pi-Pico-2-W-M
+
+![My Image](https://github.com/suho9soft/ex-0-7/blob/main/71D4E5DS-qL._SL1500_.jpg)
+
+![Cute Cat](https://github.com/suho9soft/ex-0-7/blob/main/71d6%2BP4PUzL._SL1067_.jpg)
+
+
 
 

@@ -25,6 +25,18 @@ waveshare Raspberry-Pi-Pico-2-W-M
 
 ![Cute Cat](https://github.com/suho9soft/ex-0-7/blob/main/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202025-02-13%20233837.png)
 
+Pico 2W와 OLED 디스플레이를 혼합하여 사용하려면 아래 예제 코드를 참조하세요. 이 코드는 Wi-Fi 연결 설정 및 MQTT 통신을 포함하며, OLED 디스플레이에 수신한 메시지를 표시합니다.
+
+Pico 2W의 OLED 디스플레이 핀 연결:
+
+GND: GND (핀 38)
+
+VCC: 3.3V (핀 36)
+
+SCL: GPIO 3 (핀 5)
+
+SDA: GPIO 2 (핀 4)
+
 Raspberry Pi Pico 2W(M)를 아두이노(Arduino) 환경에서 프로그래밍하려면 다음과 같은 단계를 따라야 합니다.
 
 ✅ 준비물
